@@ -1,23 +1,23 @@
 # redoc-cli-github-action
 
-This action lets you use the [redoc-cli](https://github.com/Redocly/redoc/blob/master/cli/README.md) to generate a HTML version of your OpenAPI documents.
+This action lets you use the [redocly cli](https://github.com/Redocly/redocly-cli) to generate an HTML version of your OpenAPI documents.
 
 ## Inputs
 
 ### `args`
 
-The arguments to be provided to the `redoc-cli` command.
-By default, this is empty so that `redoc-cli` will print a note about its correct usage.
+The arguments to be provided to the `redocly` command.
+By default, this is empty so that `redocly` will print a note about its correct usage.
 
 ## Outputs
 
 No outputs are returned.
-The `redoc-cli` command will automatically save the output into a file called `redoc-static.html`.
+The `redocly` command will automatically save the output into a file called `redoc-static.html`.
 It's created in the root folder of the repository's workspace.
 
 ## Example usage
 
-See [main.yml](.github/workflows/main.yml) for a "real-life" example and [redoc-cli](https://github.com/Redocly/redoc/blob/master/cli/README.md) for all available options.
+See [main.yml](.github/workflows/main.yml) for a "real-life" example and [redocly cli](https://github.com/Redocly/redocly-cli) for all available options.
 
 ```yaml
 jobs:
@@ -32,9 +32,9 @@ jobs:
 
       # then use redoc-cli-github-action to generate your HTML bundle
       - name: redoc-cli test
-        uses: DeltaLaboratory/redoc-cli@v1
+        uses: DeltaLaboratory/redocly-cli@v1
         with:
-          args: 'bundle test/petstore.yml'
+          args: 'build-docs test/petstore.yml'
 ```
 
 The example is using the `bundle` command by providing the OpenAPI document `test/petstore.yml`.
@@ -46,7 +46,7 @@ Alternatively, you can point it to a file under a certain URL.
 - name: redoc-cli test
   uses: DeltaLaboratory/redoc-cli@v1
   with:
-    args: 'bundle https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml'
+    args: 'build-docs https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml'
 ```
 
 If you need to specify a custom name and destination for the output file, use the `-o` option like this:
@@ -55,5 +55,5 @@ If you need to specify a custom name and destination for the output file, use th
 - name: redoc-cli test
   uses: DeltaLaboratory/redoc-cli@v1
   with:
-    args: 'bundle test/petstore.yml -o petstore.html'
+    args: 'build-docs test/petstore.yml -o petstore.html'
 ```
