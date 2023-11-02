@@ -32,7 +32,7 @@ jobs:
 
       # then use redoc-cli-github-action to generate your HTML bundle
       - name: redoc-cli test
-        uses: DeltaLaboratory/redocly-cli@v1
+        uses: DeltaLaboratory/redocly-cli-action@v1.0.0
         with:
           args: 'build-docs test/petstore.yml'
 ```
@@ -44,16 +44,16 @@ Alternatively, you can point it to a file under a certain URL.
 
 ```yaml
 - name: redoc-cli test
-  uses: DeltaLaboratory/redoc-cli@v1
+  uses: DeltaLaboratory/redocly-cli-action@v1.0.0
   with:
-    args: 'build-docs https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml'
+    args: 'build-docs https://petstore.swagger.io/v2/swagger.yaml'
 ```
 
 If you need to specify a custom name and destination for the output file, use the `-o` option like this:
 
 ```yaml
 - name: redoc-cli test
-  uses: DeltaLaboratory/redoc-cli@v1
+  uses: DeltaLaboratory/redocly-cli-action@v1.0.0
   with:
     args: 'build-docs test/petstore.yml -o petstore.html'
 ```

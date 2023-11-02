@@ -33,7 +33,7 @@ jobs:
 
       # use the public name of the action
       - name: redoc-cli test
-        uses: seeebiii/redoc-cli-github-action@v10
+        uses: DeltaLaboratory/redocly-cli-action@v1.0.0
         with:
           args: 'bundle test/petstore.yml -o petstore.html'
 
