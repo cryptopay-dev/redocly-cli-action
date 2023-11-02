@@ -1,4 +1,4 @@
-FROM ghcr.io/redocly/redoc/cli:latest
+FROM ghcr.io/redocly/cli:latest
 
 COPY LICENSE README.md /
 
