@@ -35,7 +35,7 @@ jobs:
       - name: redoc-cli test
         uses: DeltaLaboratory/redocly-cli-action@v1.0.0
         with:
-          args: 'bundle test/petstore.yml -o petstore.html'
+          args: 'build-docs test/petstore.yml -o petstore.html'
 
       - name: check result
         run: |
