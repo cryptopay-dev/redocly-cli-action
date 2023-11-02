@@ -1,9 +1,9 @@
 name: test-deploy
 
-# Run on each push to master
+# Run on each push to main
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test_job:

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-cd /github/workspace
+cd /github/workspace || exit
 
 echo "redoc-cli version: $(redoc-cli --version)"
 
-redoc-cli $1
+redoc-cli "$1"
