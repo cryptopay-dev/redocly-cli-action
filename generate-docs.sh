@@ -4,4 +4,5 @@ cd /github/workspace || exit
 
 echo "redoc-cli version: $(redoc-cli --version)"
 
-redoc-cli "$1"
+# shellcheck disable=SC2086
+redoc-cli $1
