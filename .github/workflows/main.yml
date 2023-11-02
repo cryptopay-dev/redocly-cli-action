@@ -12,12 +12,12 @@ jobs:
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: redoc-cli test
+      - name: @redocly/cli test
         uses: ./ # Uses an action in the root directory
         with:
-          args: 'bundle test/petstore.yml -o petstore.html'
+          args: 'build-docs test/petstore.yml -o petstore.html'
 
       - name: check result
         run: |
@@ -29,7 +29,7 @@ jobs:
     name: Testing public name
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # use the public name of the action
       - name: redoc-cli test
