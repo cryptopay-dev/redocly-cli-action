@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: @redocly/cli test
+      - name: redocly cli test
         uses: ./ # Uses an action in the root directory
         with:
           args: 'build-docs test/petstore.yml -o petstore.html'
