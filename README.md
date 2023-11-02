@@ -1,4 +1,4 @@
-# redoc-cli-github-action
+# redocly-cli-action
 
 This action lets you use the [redocly cli](https://github.com/Redocly/redocly-cli) to generate an HTML version of your OpenAPI documents.
 
